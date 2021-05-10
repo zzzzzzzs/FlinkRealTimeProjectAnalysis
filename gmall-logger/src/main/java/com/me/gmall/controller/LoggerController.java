@@ -50,7 +50,7 @@ public class LoggerController {
     public String logger(@RequestParam("param") String logStr){
         //1.输出到控制台
         //System.out.println(logStr);
-        //2.落盘
+        //2.落盘以及输出控制台，在logback.xml配置
         log.info(logStr);
         //3.发送到Kafka指定的主题中
         kafkaTemplate.send("ods_base_log",logStr);

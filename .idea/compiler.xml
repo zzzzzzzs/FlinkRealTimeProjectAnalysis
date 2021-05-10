@@ -10,8 +10,8 @@
         <module name="gmall2020-common" />
         <module name="gmall2020-mock-db" />
         <module name="gmall2020-mock-log" />
-        <module name="gmall-logger" />
         <module name="FlinkRealTimeProjectAnalysis" />
+        <module name="gmall-logger" />
       </profile>
     </annotationProcessing>
   </component>

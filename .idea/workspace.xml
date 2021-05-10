@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="" />
+    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gmall-logger/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-logger/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-logger/src/main/java/com/me/gmall/controller/LoggerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-logger/src/main/java/com/me/gmall/controller/LoggerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-logger/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-logger/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +13,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -19,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -54,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flink-release-1.12" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RebelAgentSelection">
@@ -90,10 +100,18 @@
     <configuration name="GmallLoggerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gmall-logger" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.me.gmall.GmallLoggerApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
+      <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
+      <item itemvalue="Spring Boot.GmallLoggerApplication" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -108,7 +126,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -128,6 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620539522982</updated>
       <workItem from="1620539526794" duration="5604000" />
+      <workItem from="1620605257226" duration="6500000" />
     </task>
     <servers />
   </component>
@@ -135,42 +154,70 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="905" height="240" key="GridCell.Tab.0.bottom" timestamp="1620576019588">
+    <state x="-79" y="48" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620606925538">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620576019588" />
-    <state width="905" height="240" key="GridCell.Tab.0.center" timestamp="1620576019587">
+    <state x="-79" y="48" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1620606925538" />
+    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1620628754618">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1620576019587" />
-    <state width="905" height="240" key="GridCell.Tab.0.left" timestamp="1620576019586">
+    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1620628754618" />
+    <state width="1323" height="140" key="GridCell.Tab.0.bottom" timestamp="1620661416883">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1620576019586" />
-    <state width="905" height="240" key="GridCell.Tab.0.right" timestamp="1620576019587">
+    <state width="1323" height="140" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620661416883" />
+    <state width="1323" height="140" key="GridCell.Tab.0.center" timestamp="1620661416882">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1620576019587" />
-    <state width="905" height="240" key="GridCell.Tab.1.bottom" timestamp="1620576019590">
+    <state width="1323" height="140" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1620661416882" />
+    <state width="1323" height="140" key="GridCell.Tab.0.left" timestamp="1620661416881">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620576019590" />
-    <state width="905" height="240" key="GridCell.Tab.1.center" timestamp="1620576019589">
+    <state width="1323" height="140" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1620661416881" />
+    <state width="1323" height="140" key="GridCell.Tab.0.right" timestamp="1620661416883">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1620576019589" />
-    <state width="905" height="240" key="GridCell.Tab.1.left" timestamp="1620576019588">
+    <state width="1323" height="140" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1620661416883" />
+    <state width="905" height="220" key="GridCell.Tab.1.bottom" timestamp="1620661416873">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1620576019588" />
-    <state width="905" height="240" key="GridCell.Tab.1.right" timestamp="1620576019589">
+    <state width="905" height="220" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620661416873" />
+    <state width="905" height="220" key="GridCell.Tab.1.center" timestamp="1620661416873">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="240" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1620576019589" />
+    <state width="905" height="220" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1620661416873" />
+    <state width="905" height="220" key="GridCell.Tab.1.left" timestamp="1620661416873">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="220" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1620661416873" />
+    <state width="905" height="220" key="GridCell.Tab.1.right" timestamp="1620661416873">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="220" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1620661416873" />
+    <state width="905" height="220" key="GridCell.Tab.2.bottom" timestamp="1620661416874">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="220" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620661416874" />
+    <state width="905" height="220" key="GridCell.Tab.2.center" timestamp="1620661416874">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="220" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1620661416874" />
+    <state width="905" height="220" key="GridCell.Tab.2.left" timestamp="1620661416874">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="220" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1620661416874" />
+    <state width="905" height="220" key="GridCell.Tab.2.right" timestamp="1620661416874">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="905" height="220" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1620661416874" />
     <state x="184" y="11" key="SettingsEditor" timestamp="1620543312330">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1620543312330" />
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1620605257157">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1620605257157" />
     <state x="45" y="57" key="new project wizard" timestamp="1620539626885">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
