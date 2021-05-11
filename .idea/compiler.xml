@@ -8,9 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gmall2020-common" />
-        <module name="gmall2020-mock-db" />
         <module name="gmall2020-mock-log" />
-        <module name="FlinkRealTimeProjectAnalysis" />
+        <module name="gmall2020-mock-db" />
+        <module name="gmall-realtime" />
         <module name="gmall-logger" />
       </profile>
     </annotationProcessing>
