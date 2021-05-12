@@ -9,6 +9,7 @@
         <module>gmall-logger</module>
         <module>gmall2020-mock</module>
         <module>gmall-realtime</module>
+        <module>gmall-cdc</module>
     </modules>
 
     <groupId>com.me</groupId>

@@ -1,6 +1,7 @@
 package com.me.gmall.realtime.app.dwd;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.me.gmall.realtime.utils.MyKafkaUtil;
 import org.apache.flink.api.common.functions.RichMapFunction;
@@ -10,14 +11,20 @@ import org.apache.flink.api.common.state.ValueStateDescriptor;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.runtime.state.filesystem.FsStateBackend;
 import org.apache.flink.streaming.api.CheckpointingMode;
+import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import org.apache.flink.util.Collector;
+import org.apache.flink.util.OutputTag;
 
 import java.text.SimpleDateFormat;
+
+import static com.me.gmall.realtime.common.KafkaConfig.*;
 
 /**
  * Author: zs
@@ -26,6 +33,16 @@ import java.text.SimpleDateFormat;
  * Flink的状态
  * -算子状态
  * -键控状态
+ * 执行流程说明
+ * -运行模拟生成日志的jar
+ * -将日志发送到nginx
+ * -nginx将请求转发给202、203、204上的日志采集服务器
+ * -202、203、204上的日志采集服务器 接收到日志数据之后，进行打印到控制台、落盘、发送到ods_base_log
+ * -运行的BaseLogApp应用从ods_base_log中读取数据
+ *      >结构转换
+ *      >状态修复
+ *      >分流
+ * -将分流之后的数据写到kafka的dwd主题中
  */
 public class BaseLogApp {
     public static void main(String[] args) throws Exception {
@@ -47,16 +64,14 @@ public class BaseLogApp {
         // TODO 这里在HDFS路径中的chk-3是checkpoint的文件，会5秒变一次内容
         env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/gmallFlinkRealTime/ck"));
         //2.6 设置hadoop的用户，否则用户名是电脑的用户，没有权限
-        System.setProperty("HADOOP_USER_NAME","atguigu");
+        System.setProperty("HADOOP_USER_NAME", "atguigu");
 
 
         //TODO 3.从Kafka中读取数据
         //3.1 声明消费的主题以及消费者组
-        String topic = "ods_base_log";
-        String groupId = "base_log_app_group";
 
         //3.2 通过工具类  获取kafka消费者对象
-        FlinkKafkaConsumer<String> kafkaSource = MyKafkaUtil.getKafkaSource(topic, groupId);
+        FlinkKafkaConsumer<String> kafkaSource = MyKafkaUtil.getKafkaSource(ODSTOPIC, ODSGROUPID);
 
         //3.3 将消费到的数据封装到流中
         DataStreamSource<String> kafkaDS = env.addSource(kafkaSource);
@@ -132,7 +147,60 @@ public class BaseLogApp {
 
 
         //TODO 5.分流   启动---启动侧输出流   曝光---曝光侧输出流   页面---主流
+        //5.1 定义侧输出流标记
+        OutputTag<String> startTag = new OutputTag<String>("startTag") {
+        };
+        OutputTag<String> displayTag = new OutputTag<String>("displayTag") {
+        };
+        //5.2分流
+        SingleOutputStreamOperator<String> splitDS =
+                jsonObjWithFlagDS.process(new ProcessFunction<JSONObject, String>() {
+                    @Override
+                    public void processElement(JSONObject jsonObj, Context ctx, Collector<String> out) throws Exception {
+                        //获取启动属性
+                        JSONObject startJsonObj = jsonObj.getJSONObject("start");
+                        //将接收到的jsonObj转换为字符串
+                        String jsonStr = jsonObj.toJSONString();
+                        //判断是否为启动日志
+                        if (startJsonObj != null && startJsonObj.size() > 0) {
+                            //是启动日志   将启动日志放到启动侧输出流中
+                            ctx.output(startTag, jsonStr);
+                        } else {
+                            //如果不是启动日志的话，都属于页面日志类型
+                            out.collect(jsonStr);
+                            //同时在页面日志中，还包含曝光日志
+                            JSONArray displaysArr = jsonObj.getJSONArray("displays");
+                            //判断是否为曝光日志
+                            if (displaysArr != null && displaysArr.size() > 0) {
+                                //获取页面id
+                                String pageId = jsonObj.getJSONObject("page").getString("page_id");
+                                //对曝光数组进行遍历
+                                for (int i = 0; i < displaysArr.size(); i++) {
+                                    JSONObject displaysJsonObj = displaysArr.getJSONObject(i);
+                                    //给曝光的json对象补充pageId
+                                    displaysJsonObj.put("page_id", pageId);
+                                    ctx.output(displayTag, displaysJsonObj.toJSONString());
+                                }
+                            }
+                        }
+                    }
+                });
 
+        //5.3 获取各个流数据并输出测试
+        DataStream<String> startDS = splitDS.getSideOutput(startTag);
+        DataStream<String> displayDS = splitDS.getSideOutput(displayTag);
+
+        splitDS.print(">>>页面>>>");
+        startDS.print("###启动###");
+        displayDS.print("$$$曝光$$$");
+
+        //TODO 6. 将不同流的数据写到Kafka的dwd的不同主题中
+        //6.1 声明kafka主题
+
+        //6.2 sink操作
+        startDS.addSink(MyKafkaUtil.getKafkaSink(STARTSINKTOPIC));
+        displayDS.addSink(MyKafkaUtil.getKafkaSink(DISPLAYSINKTOPIC));
+        splitDS.addSink(MyKafkaUtil.getKafkaSink(PAGESINKTOPIC));
 
         env.execute();
     }
