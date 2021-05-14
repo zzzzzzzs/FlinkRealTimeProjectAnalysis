@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gmall-cdc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-cdc/src/main/java/com/me/cdc/FlinkCDC01_DS.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/src/main/java/com/me/cdc/FlinkCDC01_DS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/func/MyDeserializationSchemaFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/func/TableProcessFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flink-release-1.12" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
@@ -92,7 +90,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BaseDBapp">
+  <component name="RunManager" selected="Application.UniqueVisitApp">
     <configuration name="BaseDBapp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwd.BaseDBapp" />
       <module name="gmall-realtime" />
@@ -132,8 +130,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlinkCDC02_SQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.cdc.FlinkCDC02_SQL" />
+    <configuration name="FlinkCDC03_CustomSchema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.cdc.FlinkCDC03_CustomSchema" />
       <module name="gmall-cdc" />
       <extension name="coverage">
         <pattern>
@@ -145,12 +143,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlinkCDC03_CustomSchema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.cdc.FlinkCDC03_CustomSchema" />
-      <module name="gmall-cdc" />
+    <configuration name="UniqueVisitApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UniqueVisitApp" />
+      <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.me.cdc.*" />
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,22 +181,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BaseLogApp" />
       <item itemvalue="Application.BaseDBapp" />
       <item itemvalue="Application.FlinkCDC01_DS" />
-      <item itemvalue="Application.FlinkCDC02_SQL" />
       <item itemvalue="Application.FlinkCDC03_CustomSchema" />
       <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
       <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
       <item itemvalue="Spring Boot.GmallLoggerApplication" />
+      <item itemvalue="Application.UniqueVisitApp" />
+      <item itemvalue="Application.BaseLogApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UniqueVisitApp" />
+        <item itemvalue="Application.BaseLogApp" />
         <item itemvalue="Application.BaseDBapp" />
         <item itemvalue="Application.FlinkCDC03_CustomSchema" />
         <item itemvalue="Application.FlinkCDC01_DS" />
-        <item itemvalue="Application.FlinkCDC02_SQL" />
-        <item itemvalue="Application.BaseLogApp" />
       </list>
     </recent_temporary>
   </component>
@@ -241,6 +239,7 @@
       <workItem from="1620829875275" duration="2596000" />
       <workItem from="1620862225407" duration="12050000" />
       <workItem from="1620903942872" duration="13837000" />
+      <workItem from="1620949351087" duration="21947000" />
     </task>
     <servers />
   </component>
@@ -252,30 +251,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="27" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1620901677265" />
+    <state x="275" y="27" key="#Scopes" timestamp="1620956044572">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#Scopes/0.0.1366.738@0.0.1366.738" timestamp="1620956044572" />
     <state x="28" y="44" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620912620997">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="28" y="44" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1620912620997" />
-    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1620903208390">
+    <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1620960317261">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1620903208390" />
-    <state width="1323" height="238" key="GridCell.Tab.0.bottom" timestamp="1620919022671">
+    <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
+    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1620949404481">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1620919022671" />
-    <state width="1323" height="238" key="GridCell.Tab.0.center" timestamp="1620919022670">
+    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1620949404481" />
+    <state width="1323" height="329" key="GridCell.Tab.0.bottom" timestamp="1621005507459">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1620919022670" />
-    <state width="1323" height="238" key="GridCell.Tab.0.left" timestamp="1620919022670">
+    <state width="1323" height="329" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
+    <state width="1323" height="329" key="GridCell.Tab.0.center" timestamp="1621005507459">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1620919022670" />
-    <state width="1323" height="238" key="GridCell.Tab.0.right" timestamp="1620919022671">
+    <state width="1323" height="329" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
+    <state width="1323" height="329" key="GridCell.Tab.0.left" timestamp="1621005507459">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="238" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1620919022671" />
+    <state width="1323" height="329" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
+    <state width="1323" height="329" key="GridCell.Tab.0.right" timestamp="1621005507459">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="329" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
     <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1620919022672">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -320,6 +327,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="115" y="127" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1620902982106" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1620991010463">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1620991010463" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1620917438461">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

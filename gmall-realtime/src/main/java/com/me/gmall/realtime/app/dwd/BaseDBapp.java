@@ -5,24 +5,50 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ververica.cdc.connectors.mysql.MySQLSource;
 import com.alibaba.ververica.cdc.connectors.mysql.table.StartupOptions;
 import com.alibaba.ververica.cdc.debezium.DebeziumSourceFunction;
+import com.me.gmall.realtime.app.func.DimSink;
 import com.me.gmall.realtime.bean.TableProcess;
-import com.me.gmall.realtime.func.MyDeserializationSchemaFunction;
-import com.me.gmall.realtime.func.TableProcessFunction;
+import com.me.gmall.realtime.app.func.MyDeserializationSchemaFunction;
+import com.me.gmall.realtime.app.func.TableProcessFunction;
 import com.me.gmall.realtime.utils.MyKafkaUtil;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.state.MapStateDescriptor;
-import org.apache.flink.streaming.api.datastream.BroadcastConnectedStream;
-import org.apache.flink.streaming.api.datastream.BroadcastStream;
-import org.apache.flink.streaming.api.datastream.DataStreamSource;
-import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+import org.apache.flink.streaming.api.datastream.*;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+import org.apache.flink.streaming.connectors.kafka.KafkaSerializationSchema;
 import org.apache.flink.util.OutputTag;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
+import javax.annotation.Nullable;
 
 /**
  * Author: zs
  * Date: 2021/5/12
  * Desc: 业务数据的动态分流
+ * 分流业务执行思路
+ *  -需要启动的进行以及应用
+ *       zk、kafka、hdfs、hbase、maxwell、BaseDBApp
+ *  -业务数据库表发生了变化
+ *  -变化信息会记录到binlog日志中
+ *  -maxwell会从binlog中读取变化信息，发送到kafka的ods_base_db_m
+ *  -BaseDBApp从kafka的ods_base_db_m主题中读取数据
+ *  -对读取的数据进行结构转换并进行简单的ETL
+ *  -使用FlinkCDC读取配置表的数据形成广播流
+ *  -将主流和广播流进行连接
+ *  -连接之后分别对两条流数据进行处理（单独封装类TableProcessFunction）
+ *      >广播流
+ *          &获取状态
+ *          &如果读取的配置是维度配置，提前建立Phoenix表
+ *          &将读取到的配置信息放到状态中
+ *      >业务主流
+ *          &获取状态
+ *          &拼接key
+ *          &根据key获取当前处理的数据的配置信息
+ *          &过滤不需要向下游传递的字段
+ *          &根据配置信息进行分流
+ *              维度--侧输出流
+ *              事实--主流
+ *  -在BaseDBApp中获取相关流进行打印
  */
 public class BaseDBapp {
     public static void main(String[] args) throws Exception {
@@ -108,13 +134,28 @@ public class BaseDBapp {
                 new TableProcessFunction(dimTag, mapStateDescriptor)
         );
 
-//        realDS.print();
 
-       /* //5.4 获取维度侧输出流
+       //5.4 获取维度侧输出流
         DataStream<JSONObject> dimDS = realDS.getSideOutput(dimTag);
 
-        realDS.print(">>>");
-        dimDS.print("####");*/
+        realDS.print("主流>>>：");
+        dimDS.print("维度###：");
+
+
+        //TODO 6.将维度侧输出流数据保存到Phoenix表中
+        dimDS.addSink(new DimSink());
+
+        //TODO 7.将事实主流数据写回到kafka的dwd层
+        realDS.addSink(
+                MyKafkaUtil.getKafkaSinkBySchema(new KafkaSerializationSchema<JSONObject>() {
+                    @Override
+                    public ProducerRecord<byte[], byte[]> serialize(JSONObject jsonObj, @Nullable Long timestamp) {
+                        String topic = jsonObj.getString("sink_table");
+                        JSONObject dataJsonObj = jsonObj.getJSONObject("data");
+                        return new ProducerRecord<byte[], byte[]>(topic,dataJsonObj.toJSONString().getBytes());
+                    }
+                })
+        );
 
         //提交job
         env.execute();

@@ -1,4 +1,4 @@
-package com.me.gmall.realtime.func;
+package com.me.gmall.realtime.app.func;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -16,6 +16,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -72,11 +76,12 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
      * @auther: zzzzzzzs
      * @Date: 2021/5/13
      */
+    // 如果主流没有数据，也就是业务表没有数据变化，此方法不会执行
     @Override
     public void processElement(JSONObject jsonObj, ReadOnlyContext ctx, Collector<JSONObject> out) throws Exception {
-        System.out.println("主流");
         //获取广播状态
         ReadOnlyBroadcastState<String, TableProcess> tableProcessState = ctx.getBroadcastState(mapStateDescriptor);
+        System.out.println("主流" + jsonObj.toJSONString());
         //获取表名
         String tableName = jsonObj.getString("table");
         //获取操作类型
@@ -89,11 +94,19 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
         }
         //拼接查询的key
         String key = tableName + ":" + type;
-        //根据key到状态中查询对应的配置信息
+        //根据key去广播状态中查询对应的配置信息
         TableProcess tableProcess = tableProcessState.get(key);
         if (tableProcess != null) {
             String sinkTable = tableProcess.getSinkTable();
             jsonObj.put("sink_table", sinkTable);
+
+            //根据配置表的配置   对字段进行过滤
+            JSONObject dataJsonObj = jsonObj.getJSONObject("data");
+            String sinkColumns = tableProcess.getSinkColumns();
+            if(sinkColumns!=null && sinkColumns.length() > 0){
+                filterColnmu(dataJsonObj,sinkColumns);
+            }
+
             //找到配置信息了  进行分流
             if (tableProcess.getSinkType().equals(TableProcess.SINK_TYPE_HBASE)) {
                 //维度数据 --发送到维度侧输出流中
@@ -109,6 +122,15 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
     }
 
 
+    //对字段进行过滤
+    private void filterColnmu(JSONObject dataJsonObj, String sinkColumns) {
+        //对sinkColumns进行分割，得到是保留的字段的名称属性
+        String[] fileds = sinkColumns.split(",");
+        List<String> fieldList = Arrays.asList(fileds);
+        Set<Map.Entry<String, Object>> entrySet = dataJsonObj.entrySet();
+        entrySet.removeIf(ele->!fieldList.contains(ele.getKey()));
+    }
+
     /**
      * @Description: 处理广播流数据()
      * @Param:
@@ -118,10 +140,11 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
      * @auther: zzzzzzzs
      * @Date: 2021/5/13
      */
+    // 如果配置表没有变化，此方法不会执行
+    // TODO 广播流中的数据不需要发送到主流中
     @Override
     public void processBroadcastElement(String jsonStr, Context ctx, Collector<JSONObject> out) throws Exception {
-        System.out.println("广播流");
-
+        System.out.println("广播流：" + jsonStr);
         //将读取到FlinkCDC采集到的信息  由jsonStr->jsonObj
         // {"database":"gmallFlinkRealTimeDIM","data":{"operate_type":"insert","sink_type":"hbase","sink_table":"base_trademark","source_table":"base_trademark","sink_columns":"id,tm_name,logo_url"},"type":"insert","table":"table_process"}
         JSONObject jsonObj = JSON.parseObject(jsonStr);
@@ -148,6 +171,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
         String key = sourceTable + ":" + operateType;
 
         //如果是维度类型配置，且是插入数据需要创建表
+        // 如果将删除配置表中的数据会报空指针异常
         if (sinkType.equals(TableProcess.SINK_TYPE_HBASE) && "insert".equals(operateType)) {
             //通过Phoenix创建表
             checkTable(sinkTable, sinkColumns, sinkPk, sinkExtend);
@@ -155,9 +179,8 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
 
         //获取广播状态
         BroadcastState<String, TableProcess> tableProcessState = ctx.getBroadcastState(mapStateDescriptor);
-        // 把key和配置表中的对象发送出去
+        // 把key和配置表中的对象放到广播状态中
         tableProcessState.put(key, tableProcess);
-        out.collect(JSON.parseObject(jsonStr));
     }
 
     //创建维度表

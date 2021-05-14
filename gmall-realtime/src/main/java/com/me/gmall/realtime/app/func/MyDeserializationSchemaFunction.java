@@ -1,4 +1,4 @@
-package com.me.gmall.realtime.func;
+package com.me.gmall.realtime.app.func;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ververica.cdc.debezium.DebeziumDeserializationSchema;
