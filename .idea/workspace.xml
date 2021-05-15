@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/func/MyDeserializationSchemaFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/func/TableProcessFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
-    </list>
+    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,11 +61,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flink-release-1.12" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="profiler.jvm" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -184,11 +179,11 @@
       <item itemvalue="Application.BaseDBapp" />
       <item itemvalue="Application.FlinkCDC01_DS" />
       <item itemvalue="Application.FlinkCDC03_CustomSchema" />
+      <item itemvalue="Application.UniqueVisitApp" />
+      <item itemvalue="Application.BaseLogApp" />
       <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
       <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
       <item itemvalue="Spring Boot.GmallLoggerApplication" />
-      <item itemvalue="Application.UniqueVisitApp" />
-      <item itemvalue="Application.BaseLogApp" />
     </list>
     <recent_temporary>
       <list>
@@ -240,6 +235,8 @@
       <workItem from="1620862225407" duration="12050000" />
       <workItem from="1620903942872" duration="13837000" />
       <workItem from="1620949351087" duration="21947000" />
+      <workItem from="1621035449186" duration="6646000" />
+      <workItem from="1621062354175" duration="1652000" />
     </task>
     <servers />
   </component>
@@ -315,14 +312,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="905" height="220" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1620661416874" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1620901319468">
+    <state x="131" y="0" key="SettingsEditor" timestamp="1621060626462">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1620901319468" />
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1620862668699">
+    <state x="131" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621060626462" />
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621062404517">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1620862668699" />
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621062404517" />
+    <state x="359" y="102" width="788" height="534" key="find.popup" timestamp="1621065607680">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="359" y="102" width="788" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1621065607680" />
     <state x="115" y="127" key="new project wizard" timestamp="1620902982106">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -331,9 +332,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1620991010463" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1620917438461">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1621061604106">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1620917438461" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1621061604106" />
   </component>
 </project>
