@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="" />
+    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseLogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseLogApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,20 +87,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UniqueVisitApp">
-    <configuration name="BaseDBapp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwd.BaseDBapp" />
-      <module name="gmall-realtime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.app.dwd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.OrderWideApp">
     <configuration name="BaseLogApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwd.BaseLogApp" />
       <module name="gmall-realtime" />
@@ -112,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlinkCDC01_DS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.cdc.FlinkCDC01_DS" />
-      <module name="gmall-cdc" />
+    <configuration name="OrderWideApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.OrderWideApp" />
+      <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.me.cdc.*" />
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlinkCDC03_CustomSchema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.cdc.FlinkCDC03_CustomSchema" />
-      <module name="gmall-cdc" />
+    <configuration name="PhoenixUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.utils.PhoenixUtil" />
+      <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.me.cdc.*" />
+          <option name="PATTERN" value="com.me.gmall.realtime.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,6 +129,19 @@
     </configuration>
     <configuration name="UniqueVisitApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UniqueVisitApp" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserJumpDetailApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UserJumpDetailApp" />
       <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
@@ -176,22 +178,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BaseDBapp" />
-      <item itemvalue="Application.FlinkCDC01_DS" />
-      <item itemvalue="Application.FlinkCDC03_CustomSchema" />
       <item itemvalue="Application.UniqueVisitApp" />
       <item itemvalue="Application.BaseLogApp" />
+      <item itemvalue="Application.UserJumpDetailApp" />
+      <item itemvalue="Application.PhoenixUtil" />
+      <item itemvalue="Application.OrderWideApp" />
       <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
       <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
       <item itemvalue="Spring Boot.GmallLoggerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UniqueVisitApp" />
+        <item itemvalue="Application.OrderWideApp" />
+        <item itemvalue="Application.PhoenixUtil" />
         <item itemvalue="Application.BaseLogApp" />
-        <item itemvalue="Application.BaseDBapp" />
-        <item itemvalue="Application.FlinkCDC03_CustomSchema" />
-        <item itemvalue="Application.FlinkCDC01_DS" />
+        <item itemvalue="Application.UserJumpDetailApp" />
+        <item itemvalue="Application.UniqueVisitApp" />
       </list>
     </recent_temporary>
   </component>
@@ -237,6 +239,8 @@
       <workItem from="1620949351087" duration="21947000" />
       <workItem from="1621035449186" duration="6646000" />
       <workItem from="1621062354175" duration="1652000" />
+      <workItem from="1621149214577" duration="6958000" />
+      <workItem from="1621178202626" duration="1324000" />
     </task>
     <servers />
   </component>
@@ -264,22 +268,22 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1620949404481" />
-    <state width="1323" height="329" key="GridCell.Tab.0.bottom" timestamp="1621005507459">
+    <state width="1323" height="125" key="GridCell.Tab.0.bottom" timestamp="1621170842737">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="329" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
-    <state width="1323" height="329" key="GridCell.Tab.0.center" timestamp="1621005507459">
+    <state width="1323" height="125" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621170842737" />
+    <state width="1323" height="125" key="GridCell.Tab.0.center" timestamp="1621170842736">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="329" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
-    <state width="1323" height="329" key="GridCell.Tab.0.left" timestamp="1621005507459">
+    <state width="1323" height="125" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621170842736" />
+    <state width="1323" height="125" key="GridCell.Tab.0.left" timestamp="1621170842735">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="329" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
-    <state width="1323" height="329" key="GridCell.Tab.0.right" timestamp="1621005507459">
+    <state width="1323" height="125" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621170842735" />
+    <state width="1323" height="125" key="GridCell.Tab.0.right" timestamp="1621170842736">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="329" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621005507459" />
+    <state width="1323" height="125" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621170842736" />
     <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1620919022672">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -320,10 +324,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621062404517" />
-    <state x="359" y="102" width="788" height="534" key="find.popup" timestamp="1621065607680">
+    <state x="359" y="102" width="788" height="534" key="find.popup" timestamp="1621178231465">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="359" y="102" width="788" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1621065607680" />
+    <state x="359" y="102" width="788" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1621178231465" />
     <state x="115" y="127" key="new project wizard" timestamp="1620902982106">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -332,9 +336,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1620991010463" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1621061604106">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1621178209536">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1621061604106" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1621178209536" />
   </component>
 </project>

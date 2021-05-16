@@ -50,21 +50,21 @@ public class BaseLogApp {
         //1.1 创建流处理环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //1.2 设置并行度
-        env.setParallelism(4);
-        //TODO 2.设置检查点
-        //2.1 每隔5秒创建一次检查点
-        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
-        //2.2 设置检查点超时时间
-        env.getCheckpointConfig().setCheckpointTimeout(60000L);
-        //2.3 设置取消job后是否保留检查点
-        env.getCheckpointConfig().enableExternalizedCheckpoints(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
-        //2.4 设置检查点重启策略，如果重启失败，需要自己看日志检查错误
-        env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 3000L));
-        //2.5 设置状态后端   内存|文件系统|RocksDB
-        // TODO 这里在HDFS路径中的chk-3是checkpoint的文件，会5秒变一次内容
-        env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/gmallFlinkRealTime/ck"));
-        //2.6 设置hadoop的用户，否则用户名是电脑的用户，没有权限
-        System.setProperty("HADOOP_USER_NAME", "atguigu");
+//        env.setParallelism(4);
+//        //TODO 2.设置检查点
+//        //2.1 每隔5秒创建一次检查点
+//        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);
+//        //2.2 设置检查点超时时间
+//        env.getCheckpointConfig().setCheckpointTimeout(60000L);
+//        //2.3 设置取消job后是否保留检查点
+//        env.getCheckpointConfig().enableExternalizedCheckpoints(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
+//        //2.4 设置检查点重启策略，如果重启失败，需要自己看日志检查错误
+//        env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, 3000L));
+//        //2.5 设置状态后端   内存|文件系统|RocksDB
+//        // TODO 这里在HDFS路径中的chk-3是checkpoint的文件，会5秒变一次内容
+//        env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/gmallFlinkRealTime/ck"));
+//        //2.6 设置hadoop的用户，否则用户名是电脑的用户，没有权限
+//        System.setProperty("HADOOP_USER_NAME", "atguigu");
 
 
         //TODO 3.从Kafka中读取数据
