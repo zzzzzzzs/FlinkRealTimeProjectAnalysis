@@ -14,8 +14,11 @@ import java.util.List;
  * Date: 2021/5/15
  * Desc: 操作Phoenix的工具类
  */
+
+// TODO ORM框架都是用的这种思路，反射获取元数据信息转换成对象
 public class PhoenixUtil {
 
+    // 单例对象--懒汉式，线程不安全，这里就不考虑多线程了
     private static Connection conn;
 
     //连接初始化
@@ -37,10 +40,10 @@ public class PhoenixUtil {
             //创建数据库操作对象
             ps = conn.prepareStatement(sql);
 
-            //执行SQL语句
+            //执行SQL语句，去数据库查询
             rs = ps.executeQuery();
 
-            //获取结果集对象元数据信息
+            //获取结果集对象元数据信息，ORM框架都是用的这种思路，获取元数据
             ResultSetMetaData metaData = rs.getMetaData();
 
             //处理结果集
@@ -54,7 +57,6 @@ public class PhoenixUtil {
                 }
                 resList.add(obj);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("从Phoenix中查询数据失败");

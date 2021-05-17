@@ -171,7 +171,7 @@ public class TableProcessFunction extends BroadcastProcessFunction<JSONObject, S
         String key = sourceTable + ":" + operateType;
 
         //如果是维度类型配置，且是插入数据需要创建表
-        // 如果将删除配置表中的数据会报空指针异常
+        // 如果将删除配置表中的数据会报空指针异常，在实际中不会将表删除
         if (sinkType.equals(TableProcess.SINK_TYPE_HBASE) && "insert".equals(operateType)) {
             //通过Phoenix创建表
             checkTable(sinkTable, sinkColumns, sinkPk, sinkExtend);

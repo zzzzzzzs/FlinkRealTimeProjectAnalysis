@@ -2,6 +2,8 @@ package com.me.gmall.realtime.app.dwm;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.me.gmall.realtime.app.func.DimAsyncFunction;
 import com.me.gmall.realtime.bean.OrderDetail;
 import com.me.gmall.realtime.bean.OrderInfo;
 import com.me.gmall.realtime.bean.OrderWide;
@@ -10,6 +12,7 @@ import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.configuration.Configuration;
+import org.apache.flink.streaming.api.datastream.AsyncDataStream;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -19,10 +22,13 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 import org.apache.flink.util.Collector;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
- * Author: Felix
+ * Author: zs
  * Date: 2021/5/15
  * Desc: 订单宽表数据准备
  */
@@ -127,7 +133,44 @@ public class OrderWideApp {
                     }
                 });
 
-        orderWideDS.print(">>>>");
+//        orderWideDS.print(">>>>");
+
+        //TODO 7.和用户维度进行关联
+        SingleOutputStreamOperator<OrderWide> orderWideWithUserInfoDS = AsyncDataStream.unorderedWait(
+                orderWideDS,
+                // 使用了模板方法设计模式
+                new DimAsyncFunction<OrderWide>("DIM_USER_INFO") {
+                    @Override
+                    public void join(OrderWide orderWide, JSONObject dimJsonObj) {
+                        try {
+                            // 将 OrderWide 的字段补全
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                            String gender = dimJsonObj.getString("GENDER");
+                            String birthday = dimJsonObj.getString("BIRTHDAY");
+                            Date birthdayDate = sdf.parse(birthday);
+                            long birthdayTime = birthdayDate.getTime();
+                            long curTime = System.currentTimeMillis();
+                            long ageTime = curTime - birthdayTime;
+                            Long age = ageTime / 1000 / 60 / 60 / 24 / 365;
+                            orderWide.setUser_gender(gender);
+                            orderWide.setUser_age(age.intValue());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    // 获取key
+                    @Override
+                    public String getKey(OrderWide orderWide) {
+                        return orderWide.getUser_id().toString();
+                    }
+                },
+                60,
+                TimeUnit.SECONDS
+        );
+
+        orderWideWithUserInfoDS.print(">>>>");
+
         env.execute();
     }
 }
