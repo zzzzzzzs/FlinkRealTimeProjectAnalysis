@@ -59,5 +59,11 @@ public abstract class DimAsyncFunction<T> extends RichAsyncFunction<T,T> impleme
             }
         });
     }
+
+
+    // 这里的程序写成了一个接口，不用抽象方法了
+//    public abstract void join(T obj, JSONObject dimJsonObj);
+//    public abstract String getKey(T obj);
+
 }
 

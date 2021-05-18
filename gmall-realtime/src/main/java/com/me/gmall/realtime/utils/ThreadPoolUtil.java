@@ -48,6 +48,7 @@ public class ThreadPoolUtil {
     */
 
     // 其实工具类使用了懒汉式加载都需要线程安全
+    // TODO 也可以使用饿汉式创建线程池，这样就不用担心线程安全了，但是使用懒汉式可以做一些初始化工作。
     public static ThreadPoolExecutor getInstance(){
         if(pool == null){
             synchronized (ThreadPoolUtil.class){

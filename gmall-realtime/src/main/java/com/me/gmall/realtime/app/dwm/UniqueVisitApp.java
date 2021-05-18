@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
  * Author: Felix
  * Date: 2021/5/14
  * Desc: 独立访客明细
+ *      使用状态处理重复数据
  */
 public class UniqueVisitApp {
     public static void main(String[] args) throws Exception {
