@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/UniqueVisitApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/UniqueVisitApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/func/DimAsyncFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/func/DimAsyncFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/ThreadPoolUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/ThreadPoolUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Flink_self_study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Kafka_self_study" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
@@ -184,11 +181,11 @@
       <item itemvalue="Application.OrderWideApp" />
       <item itemvalue="Application.BaseDBapp" />
       <item itemvalue="Application.DimUtil" />
+      <item itemvalue="Application.PaymentWideApp" />
+      <item itemvalue="Application.DateTimeUtil" />
       <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
       <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
       <item itemvalue="Spring Boot.GmallLoggerApplication" />
-      <item itemvalue="Application.PaymentWideApp" />
-      <item itemvalue="Application.DateTimeUtil" />
     </list>
     <recent_temporary>
       <list>
@@ -247,6 +244,7 @@
       <workItem from="1621213393489" duration="893000" />
       <workItem from="1621214317422" duration="24520000" />
       <workItem from="1621294837895" duration="30025000" />
+      <workItem from="1621381063546" duration="4390000" />
     </task>
     <servers />
   </component>
@@ -270,10 +268,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1621323459241">
+    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1621387179720">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621323459241" />
+    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621387179720" />
     <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1621354128776">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

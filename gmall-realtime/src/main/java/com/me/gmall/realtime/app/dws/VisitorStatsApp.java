@@ -63,82 +63,76 @@ public class VisitorStatsApp {
 
         //TODO 6.对读到的流进行结构的转换
         //dwd_page_log
-        SingleOutputStreamOperator<VisitorStats> pageViesStatsDS = pageViewDS.map(
-                new MapFunction<String, VisitorStats>() {
-                    @Override
-                    public VisitorStats map(String jsonStr) throws Exception {
-                        JSONObject jsonObj = JSON.parseObject(jsonStr);
-                        VisitorStats visitorStats = new VisitorStats(
-                                "",
-                                "",
-                                jsonObj.getJSONObject("common").getString("vc"),
-                                jsonObj.getJSONObject("common").getString("ch"),
-                                jsonObj.getJSONObject("common").getString("ar"),
-                                jsonObj.getJSONObject("common").getString("is_new"),
-                                0L,
-                                1L,
-                                0L,
-                                0L,
-                                jsonObj.getJSONObject("page").getLong("during_time"),
-                                jsonObj.getLong("ts")
-                        );
-                        String lastPageId = jsonObj.getJSONObject("page").getString("last_page_id");
-                        if (lastPageId == null || lastPageId.length() == 0) {
-                            visitorStats.setSv_ct(1L);
-                        }
-                        return visitorStats;
-                    }
+        SingleOutputStreamOperator<VisitorStats> pageViesStatsDS = pageViewDS.map(new MapFunction<String, VisitorStats>() {
+            @Override
+            public VisitorStats map(String jsonStr) throws Exception {
+                JSONObject jsonObj = JSON.parseObject(jsonStr);
+                VisitorStats visitorStats = new VisitorStats(
+                        "",
+                        "",
+                        jsonObj.getJSONObject("common").getString("vc"),
+                        jsonObj.getJSONObject("common").getString("ch"),
+                        jsonObj.getJSONObject("common").getString("ar"),
+                        jsonObj.getJSONObject("common").getString("is_new"),
+                        0L,
+                        1L,
+                        0L,
+                        0L,
+                        jsonObj.getJSONObject("page").getLong("during_time"),
+                        jsonObj.getLong("ts")
+                );
+                String lastPageId = jsonObj.getJSONObject("page").getString("last_page_id");
+                if (lastPageId == null || lastPageId.length() == 0) {
+                    visitorStats.setSv_ct(1L);
                 }
-        );
+                return visitorStats;
+            }
+        });
 
         //uv
-        SingleOutputStreamOperator<VisitorStats> uvStatsDS = uniqueVisitDS.map(
-                new MapFunction<String, VisitorStats>() {
-                    @Override
-                    public VisitorStats map(String jsonStr) throws Exception {
-                        JSONObject jsonObj = JSON.parseObject(jsonStr);
-                        VisitorStats visitorStats = new VisitorStats(
-                                "",
-                                "",
-                                jsonObj.getJSONObject("common").getString("vc"),
-                                jsonObj.getJSONObject("common").getString("ch"),
-                                jsonObj.getJSONObject("common").getString("ar"),
-                                jsonObj.getJSONObject("common").getString("is_new"),
-                                1L,
-                                0L,
-                                0L,
-                                0L,
-                                0L,
-                                jsonObj.getLong("ts")
-                        );
-                        return visitorStats;
-                    }
-                }
-        );
+        SingleOutputStreamOperator<VisitorStats> uvStatsDS = uniqueVisitDS.map(new MapFunction<String, VisitorStats>() {
+            @Override
+            public VisitorStats map(String jsonStr) throws Exception {
+                JSONObject jsonObj = JSON.parseObject(jsonStr);
+                VisitorStats visitorStats = new VisitorStats(
+                        "",
+                        "",
+                        jsonObj.getJSONObject("common").getString("vc"),
+                        jsonObj.getJSONObject("common").getString("ch"),
+                        jsonObj.getJSONObject("common").getString("ar"),
+                        jsonObj.getJSONObject("common").getString("is_new"),
+                        1L,
+                        0L,
+                        0L,
+                        0L,
+                        0L,
+                        jsonObj.getLong("ts")
+                );
+                return visitorStats;
+            }
+        });
         //ujd
-        SingleOutputStreamOperator<VisitorStats> userJumpStatsDS = userJumpDS.map(
-                new MapFunction<String, VisitorStats>() {
-                    @Override
-                    public VisitorStats map(String jsonStr) throws Exception {
-                        JSONObject jsonObj = JSON.parseObject(jsonStr);
-                        VisitorStats visitorStats = new VisitorStats(
-                                "",
-                                "",
-                                jsonObj.getJSONObject("common").getString("vc"),
-                                jsonObj.getJSONObject("common").getString("ch"),
-                                jsonObj.getJSONObject("common").getString("ar"),
-                                jsonObj.getJSONObject("common").getString("is_new"),
-                                0L,
-                                0L,
-                                0L,
-                                1L,
-                                0L,
-                                jsonObj.getLong("ts")
-                        );
-                        return visitorStats;
-                    }
-                }
-        );
+        SingleOutputStreamOperator<VisitorStats> userJumpStatsDS = userJumpDS.map(new MapFunction<String, VisitorStats>() {
+            @Override
+            public VisitorStats map(String jsonStr) throws Exception {
+                JSONObject jsonObj = JSON.parseObject(jsonStr);
+                VisitorStats visitorStats = new VisitorStats(
+                        "",
+                        "",
+                        jsonObj.getJSONObject("common").getString("vc"),
+                        jsonObj.getJSONObject("common").getString("ch"),
+                        jsonObj.getJSONObject("common").getString("ar"),
+                        jsonObj.getJSONObject("common").getString("is_new"),
+                        0L,
+                        0L,
+                        0L,
+                        1L,
+                        0L,
+                        jsonObj.getLong("ts")
+                );
+                return visitorStats;
+            }
+        });
 
         //TODO 7.合并三条流
         DataStream<VisitorStats> unionDS = pageViesStatsDS.union(uvStatsDS, userJumpStatsDS);
@@ -147,30 +141,25 @@ public class VisitorStatsApp {
         SingleOutputStreamOperator<VisitorStats> visitorStatsWithWatermarkDS = unionDS.assignTimestampsAndWatermarks(
                 WatermarkStrategy
                         .<VisitorStats>forBoundedOutOfOrderness(Duration.ofSeconds(3))
-                        .withTimestampAssigner(
-                                new SerializableTimestampAssigner<VisitorStats>() {
-                                    @Override
-                                    public long extractTimestamp(VisitorStats visitorStats, long recordTimestamp) {
-                                        return visitorStats.getTs();
-                                    }
-                                }
-                        )
-        );
+                        .withTimestampAssigner(new SerializableTimestampAssigner<VisitorStats>() {
+                            @Override
+                            public long extractTimestamp(VisitorStats visitorStats, long recordTimestamp) {
+                                return visitorStats.getTs();
+                            }
+                        }));
 
         //TODO 9.按照维度进行分组
-        KeyedStream<VisitorStats, Tuple4<String, String, String, String>> keyedDS = visitorStatsWithWatermarkDS.keyBy(
-                new KeySelector<VisitorStats, Tuple4<String, String, String, String>>() {
-                    @Override
-                    public Tuple4<String, String, String, String> getKey(VisitorStats visitorStats) throws Exception {
-                        return Tuple4.of(
-                                visitorStats.getVc(),
-                                visitorStats.getCh(),
-                                visitorStats.getAr(),
-                                visitorStats.getIs_new()
-                        );
-                    }
-                }
-        );
+        KeyedStream<VisitorStats, Tuple4<String, String, String, String>> keyedDS = visitorStatsWithWatermarkDS.keyBy(new KeySelector<VisitorStats, Tuple4<String, String, String, String>>() {
+            @Override
+            public Tuple4<String, String, String, String> getKey(VisitorStats visitorStats) throws Exception {
+                return Tuple4.of(
+                        visitorStats.getVc(),
+                        visitorStats.getCh(),
+                        visitorStats.getAr(),
+                        visitorStats.getIs_new()
+                );
+            }
+        });
 
         //TODO 10.开窗
         WindowedStream<VisitorStats, Tuple4<String, String, String, String>, TimeWindow> windowDS = keyedDS.window(
