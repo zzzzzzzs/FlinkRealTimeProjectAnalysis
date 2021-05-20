@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/PaymentWideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/PaymentWideApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/UniqueVisitApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/UniqueVisitApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/func/DimAsyncFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/func/DimAsyncFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/DimUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/DimUtil.java" afterDir="false" />
-    </list>
+    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
