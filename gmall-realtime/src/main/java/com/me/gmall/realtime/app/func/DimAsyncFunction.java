@@ -29,7 +29,7 @@ public abstract class DimAsyncFunction<T> extends RichAsyncFunction<T,T> impleme
         this.tableName = tableName;
     }
 
-    // TODO　？？？　这里的open是来一条执行一次吗，这里是如何执行的
+
     @Override
     public void open(Configuration parameters) throws Exception {
         //获取线程池对象
@@ -38,14 +38,14 @@ public abstract class DimAsyncFunction<T> extends RichAsyncFunction<T,T> impleme
 
     @Override
     public void asyncInvoke(T obj, ResultFuture<T> resultFuture) throws Exception {
-        //发送异步请求
+        //发送异步请求，这里是不是可以使用netty
         executorService.submit(new Runnable() {
             @Override
             public void run() {
                 long start = System.currentTimeMillis();
                 //获取key主键的值，由于泛型的原因主键key不知道类型，不用做具体的实现方式。具体实现延迟到子类创建的时候实现
                 String key = getKey(obj);
-                //获取维度对象
+                //TODO 获取维度对象 -- 使用了旁路缓存
                 JSONObject dimJsonObj = DimUtil.getDimInfo(tableName, key);
                 //维度关联
                 if(dimJsonObj != null && dimJsonObj.size() > 0){

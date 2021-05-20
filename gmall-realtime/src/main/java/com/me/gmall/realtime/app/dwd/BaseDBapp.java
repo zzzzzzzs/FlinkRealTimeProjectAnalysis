@@ -152,6 +152,7 @@ public class BaseDBapp {
                     public ProducerRecord<byte[], byte[]> serialize(JSONObject jsonObj, @Nullable Long timestamp) {
                         String topic = jsonObj.getString("sink_table");
                         JSONObject dataJsonObj = jsonObj.getJSONObject("data");
+                        // 需要序列化
                         return new ProducerRecord<byte[], byte[]>(topic,dataJsonObj.toJSONString().getBytes());
                     }
                 })

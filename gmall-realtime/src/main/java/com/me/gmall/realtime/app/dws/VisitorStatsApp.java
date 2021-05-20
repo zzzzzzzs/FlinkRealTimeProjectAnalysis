@@ -28,6 +28,16 @@ import java.util.Date;
  * Author: zs
  * Date: 2021/5/18
  * Desc: 访客主题DWS
+ * <p>
+ * ?要不要把多个明细的同样的维度统计在一起?
+ * 因为单位时间内mid的操作数据非常有限不能明显的压缩数据量（如果是数据量够大，或者单位时间够长可以）
+ * 所以用常用统计的四个维度进行聚合 渠道、新老用户、app版本、省市区域
+ * 度量值包括 启动、日活（当日首次启动）、访问页面数、新增用户数、跳出数、平均页面停留时长、总访问时长
+ * 聚合窗口： 10秒
+ * <p>
+ * 各个数据在维度聚合前不具备关联性 ，所以 先进行维度聚合
+ * 进行关联  这是一个fulljoin
+ * 可以考虑使用flinksql 完成
  */
 public class VisitorStatsApp {
     public static void main(String[] args) throws Exception {
@@ -137,64 +147,67 @@ public class VisitorStatsApp {
         //TODO 7.合并三条流
         DataStream<VisitorStats> unionDS = pageViesStatsDS.union(uvStatsDS, userJumpStatsDS);
 
-        //TODO 8.设置Watermark以及提取事件时间字段
-        SingleOutputStreamOperator<VisitorStats> visitorStatsWithWatermarkDS = unionDS.assignTimestampsAndWatermarks(
-                WatermarkStrategy
-                        .<VisitorStats>forBoundedOutOfOrderness(Duration.ofSeconds(3))
-                        .withTimestampAssigner(new SerializableTimestampAssigner<VisitorStats>() {
-                            @Override
-                            public long extractTimestamp(VisitorStats visitorStats, long recordTimestamp) {
-                                return visitorStats.getTs();
-                            }
-                        }));
+        unionDS.print(">>>:");
 
-        //TODO 9.按照维度进行分组
-        KeyedStream<VisitorStats, Tuple4<String, String, String, String>> keyedDS = visitorStatsWithWatermarkDS.keyBy(new KeySelector<VisitorStats, Tuple4<String, String, String, String>>() {
-            @Override
-            public Tuple4<String, String, String, String> getKey(VisitorStats visitorStats) throws Exception {
-                return Tuple4.of(
-                        visitorStats.getVc(),
-                        visitorStats.getCh(),
-                        visitorStats.getAr(),
-                        visitorStats.getIs_new()
-                );
-            }
-        });
 
-        //TODO 10.开窗
-        WindowedStream<VisitorStats, Tuple4<String, String, String, String>, TimeWindow> windowDS = keyedDS.window(
-                TumblingEventTimeWindows.of(Time.seconds(10))
-        );
-
-        //TODO 11.对窗口中的数据进行聚合计算
-        SingleOutputStreamOperator<VisitorStats> reduceDS = windowDS.reduce(
-                new ReduceFunction<VisitorStats>() {
-                    @Override
-                    public VisitorStats reduce(VisitorStats stats1, VisitorStats stats2) throws Exception {
-                        //把度量数据两两相加
-                        stats1.setPv_ct(stats1.getPv_ct() + stats2.getPv_ct());
-                        stats1.setUv_ct(stats1.getUv_ct() + stats2.getUv_ct());
-                        stats1.setUj_ct(stats1.getUj_ct() + stats2.getUj_ct());
-                        stats1.setSv_ct(stats1.getSv_ct() + stats2.getSv_ct());
-                        stats1.setDur_sum(stats1.getDur_sum() + stats2.getDur_sum());
-                        return stats1;
-                    }
-                },
-                new ProcessWindowFunction<VisitorStats, VisitorStats, Tuple4<String, String, String, String>, TimeWindow>() {
-                    @Override
-                    public void process(Tuple4<String, String, String, String> tuple4, Context context, Iterable<VisitorStats> elements, Collector<VisitorStats> out) throws Exception {
-                        //对窗口中的数据进行处理  补充时间字段
-                        for (VisitorStats visitorStats : elements) {
-                            visitorStats.setStt(DateTimeUtil.toYMDHms(new Date(context.window().getStart())));
-                            visitorStats.setEdt(DateTimeUtil.toYMDHms(new Date(context.window().getEnd())));
-                            visitorStats.setTs(System.currentTimeMillis());
-                            out.collect(visitorStats);
-                        }
-
-                    }
-                }
-        );
-        reduceDS.print(">>>>");
+//        //TODO 8.设置Watermark以及提取事件时间字段
+//        SingleOutputStreamOperator<VisitorStats> visitorStatsWithWatermarkDS = unionDS.assignTimestampsAndWatermarks(
+//                WatermarkStrategy
+//                        .<VisitorStats>forBoundedOutOfOrderness(Duration.ofSeconds(3))
+//                        .withTimestampAssigner(new SerializableTimestampAssigner<VisitorStats>() {
+//                            @Override
+//                            public long extractTimestamp(VisitorStats visitorStats, long recordTimestamp) {
+//                                return visitorStats.getTs();
+//                            }
+//                        }));
+//
+//        //TODO 9.按照维度进行分组
+//        KeyedStream<VisitorStats, Tuple4<String, String, String, String>> keyedDS = visitorStatsWithWatermarkDS.keyBy(new KeySelector<VisitorStats, Tuple4<String, String, String, String>>() {
+//            @Override
+//            public Tuple4<String, String, String, String> getKey(VisitorStats visitorStats) throws Exception {
+//                return Tuple4.of(
+//                        visitorStats.getVc(),
+//                        visitorStats.getCh(),
+//                        visitorStats.getAr(),
+//                        visitorStats.getIs_new()
+//                );
+//            }
+//        });
+//
+//        //TODO 10.开窗
+//        WindowedStream<VisitorStats, Tuple4<String, String, String, String>, TimeWindow> windowDS = keyedDS.window(
+//                TumblingEventTimeWindows.of(Time.seconds(10))
+//        );
+//
+//        //TODO 11.对窗口中的数据进行聚合计算
+//        SingleOutputStreamOperator<VisitorStats> reduceDS = windowDS.reduce(
+//                new ReduceFunction<VisitorStats>() {
+//                    @Override
+//                    public VisitorStats reduce(VisitorStats stats1, VisitorStats stats2) throws Exception {
+//                        //把度量数据两两相加
+//                        stats1.setPv_ct(stats1.getPv_ct() + stats2.getPv_ct());
+//                        stats1.setUv_ct(stats1.getUv_ct() + stats2.getUv_ct());
+//                        stats1.setUj_ct(stats1.getUj_ct() + stats2.getUj_ct());
+//                        stats1.setSv_ct(stats1.getSv_ct() + stats2.getSv_ct());
+//                        stats1.setDur_sum(stats1.getDur_sum() + stats2.getDur_sum());
+//                        return stats1;
+//                    }
+//                },
+//                new ProcessWindowFunction<VisitorStats, VisitorStats, Tuple4<String, String, String, String>, TimeWindow>() {
+//                    @Override
+//                    public void process(Tuple4<String, String, String, String> tuple4, Context context, Iterable<VisitorStats> elements, Collector<VisitorStats> out) throws Exception {
+//                        //对窗口中的数据进行处理  补充时间字段
+//                        for (VisitorStats visitorStats : elements) {
+//                            visitorStats.setStt(DateTimeUtil.toYMDHms(new Date(context.window().getStart())));
+//                            visitorStats.setEdt(DateTimeUtil.toYMDHms(new Date(context.window().getEnd())));
+//                            visitorStats.setTs(System.currentTimeMillis());
+//                            out.collect(visitorStats);
+//                        }
+//
+//                    }
+//                }
+//        );
+//        reduceDS.print(">>>>");
 
         env.execute();
     }

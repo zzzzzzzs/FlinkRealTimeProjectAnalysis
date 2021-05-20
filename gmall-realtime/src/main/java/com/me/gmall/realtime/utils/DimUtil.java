@@ -49,7 +49,7 @@ public class DimUtil {
     }
 
     /*
-        从Phoenix中查询维度数据，使用旁路缓存优化
+        TODO　从Phoenix中查询维度数据，使用旁路缓存优化
         先从缓存中查询维度数据，如果缓存中有，直接将维度数据返回；如果缓存中没有维度数据，再到Phoenix中
         查询维度数据，然后将查询出来的维度数据放到缓存中，下次直接从缓存中获取。
         第一次查询速度慢，但是当数据存入到redis中以后速度就快了。
@@ -81,7 +81,9 @@ public class DimUtil {
         JSONObject dimJsonObj = null;
 
         try {
+            // 获取redis的连接池资源
             jedis = RedisUtil.getJedis();
+            // 通过redisKey去redis中查询维度数据
             dimJsonStr = jedis.get(redisKey.toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -110,7 +112,7 @@ public class DimUtil {
             }
         }
 
-        //关闭连接
+        //关闭连接，将jedis对象放到线程池中
         if (jedis != null) {
             jedis.close();
             System.out.println("关闭缓存连接 ");

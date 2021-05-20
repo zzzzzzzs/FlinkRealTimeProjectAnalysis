@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/PaymentWideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/PaymentWideApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/UniqueVisitApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/UniqueVisitApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/func/DimAsyncFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/func/DimAsyncFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/DimUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/DimUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +69,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Kafka_self_study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
-    <property name="settings.editor.selected.configurable" value="profiler.jvm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -87,7 +93,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PaymentWideApp">
+  <component name="RunManager" selected="Application.UserJumpDetailApp">
     <configuration name="BaseDBapp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwd.BaseDBapp" />
       <module name="gmall-realtime" />
@@ -101,51 +107,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateTimeUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.utils.DateTimeUtil" />
-      <module name="gmall-realtime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DimUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.utils.DimUtil" />
-      <module name="gmall-realtime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderWideApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.OrderWideApp" />
-      <module name="gmall-realtime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PaymentWideApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.PaymentWideApp" />
       <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueVisitApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UniqueVisitApp" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserJumpDetailApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UserJumpDetailApp" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisitorStatsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dws.VisitorStatsApp" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dws.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,22 +184,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.OrderWideApp" />
       <item itemvalue="Application.BaseDBapp" />
-      <item itemvalue="Application.DimUtil" />
       <item itemvalue="Application.PaymentWideApp" />
-      <item itemvalue="Application.DateTimeUtil" />
+      <item itemvalue="Application.UniqueVisitApp" />
+      <item itemvalue="Application.UserJumpDetailApp" />
+      <item itemvalue="Application.VisitorStatsApp" />
       <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
       <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
       <item itemvalue="Spring Boot.GmallLoggerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PaymentWideApp" />
-        <item itemvalue="Application.DateTimeUtil" />
         <item itemvalue="Application.BaseDBapp" />
-        <item itemvalue="Application.OrderWideApp" />
-        <item itemvalue="Application.DimUtil" />
+        <item itemvalue="Application.UserJumpDetailApp" />
+        <item itemvalue="Application.VisitorStatsApp" />
+        <item itemvalue="Application.UniqueVisitApp" />
+        <item itemvalue="Application.PaymentWideApp" />
       </list>
     </recent_temporary>
   </component>
@@ -245,6 +251,9 @@
       <workItem from="1621214317422" duration="24520000" />
       <workItem from="1621294837895" duration="30025000" />
       <workItem from="1621381063546" duration="4390000" />
+      <workItem from="1621470350778" duration="2504000" />
+      <workItem from="1621472869859" duration="23574000" />
+      <workItem from="1621516880318" duration="2180000" />
     </task>
     <servers />
   </component>
@@ -264,30 +273,34 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="28" y="44" width="1174" height="690" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1620912620997" />
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1621495145590">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1621495145590" />
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1620960317261">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1621387179720">
+    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1621500885185">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621387179720" />
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1621354128776">
+    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621500885185" />
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1621515880876">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621354128776" />
-    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1621354128776">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621515880876" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1621515880876">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621354128776" />
-    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1621354128776">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621515880876" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1621515880876">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621354128776" />
-    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1621354128776">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621515880876" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1621515880876">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621354128776" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621515880876" />
     <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1620919022672">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -320,14 +333,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="905" height="220" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1620661416874" />
-    <state x="131" y="0" key="SettingsEditor" timestamp="1621060626462">
+    <state x="131" y="0" key="SettingsEditor" timestamp="1621486408401">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="131" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621060626462" />
+    <state x="131" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621486408401" />
     <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621062404517">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621062404517" />
+    <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1" timestamp="1621471793193">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1/0.0.1366.738@0.0.1366.738" timestamp="1621471793193" />
     <state x="359" y="102" width="788" height="534" key="find.popup" timestamp="1621334418367">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -340,9 +357,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1620991010463" />
-    <state x="346" y="59" width="672" height="676" key="search.everywhere.popup" timestamp="1621320889739">
+    <state x="346" y="59" width="672" height="676" key="search.everywhere.popup" timestamp="1621472887266">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="676" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1621320889739" />
+    <state x="346" y="59" width="672" height="676" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1621472887266" />
   </component>
 </project>

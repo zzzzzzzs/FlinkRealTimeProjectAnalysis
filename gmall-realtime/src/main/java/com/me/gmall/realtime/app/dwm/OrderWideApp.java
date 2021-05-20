@@ -65,7 +65,7 @@ public class OrderWideApp {
 
             @Override
             public OrderInfo map(String jsonStr) throws Exception {
-                //将jison字符串转换为订单实体类
+                //将json字符串转换为订单实体类
                 OrderInfo orderInfo = JSON.parseObject(jsonStr, OrderInfo.class);
                 orderInfo.setCreate_ts(sdf.parse(orderInfo.getCreate_time()).getTime());
                 return orderInfo;
@@ -135,7 +135,7 @@ public class OrderWideApp {
 
 //        orderWideDS.print(">>>>");
 
-        //TODO 7.和用户维度进行关联
+        //TODO 7.和用户维度进行关联，使用了异步IO的方式
         SingleOutputStreamOperator<OrderWide> orderWideWithUserInfoDS = AsyncDataStream.unorderedWait(
                 orderWideDS,
                 // 使用了模板方法设计模式
