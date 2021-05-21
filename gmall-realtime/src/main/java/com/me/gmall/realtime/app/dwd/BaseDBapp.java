@@ -147,12 +147,13 @@ public class BaseDBapp {
 
         //TODO 7.将事实主流数据写回到kafka的dwd层
         realDS.addSink(
+                // TODO　自定义序列化　这样做主要是为了分流写到不用的kafka主题中，有一个方法需要在子类中实现，这样做可以获取数据的表名
                 MyKafkaUtil.getKafkaSinkBySchema(new KafkaSerializationSchema<JSONObject>() {
                     @Override
                     public ProducerRecord<byte[], byte[]> serialize(JSONObject jsonObj, @Nullable Long timestamp) {
                         String topic = jsonObj.getString("sink_table");
                         JSONObject dataJsonObj = jsonObj.getJSONObject("data");
-                        // 需要序列化
+                        // 需要自定义序列化
                         return new ProducerRecord<byte[], byte[]>(topic,dataJsonObj.toJSONString().getBytes());
                     }
                 })
