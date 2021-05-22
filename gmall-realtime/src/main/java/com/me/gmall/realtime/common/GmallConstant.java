@@ -1,4 +1,4 @@
-package com.me.gmall.realtime.bean;
+package com.me.gmall.realtime.common;
 
 
 /**

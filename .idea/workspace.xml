@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/gmall-cdc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-realtime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/VisitorStatsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/common/GmallConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/common/GmallConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProductStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProductStatsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/bean/GmallConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/common/GmallConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,13 +91,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ProductStatsApp">
+  <component name="RunManager" selected="Application.KeywordUtil">
     <configuration name="BaseDBapp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwd.BaseDBapp" />
       <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.me.gmall.realtime.app.dwd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KeywordUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.utils.KeywordUtil" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,19 +137,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.me.gmall.realtime.app.dws.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserJumpDetailApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UserJumpDetailApp" />
-      <module name="gmall-realtime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,21 +183,21 @@
     </configuration>
     <list>
       <item itemvalue="Application.VisitorStatsApp" />
-      <item itemvalue="Application.UserJumpDetailApp" />
-      <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
-      <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
-      <item itemvalue="Spring Boot.GmallLoggerApplication" />
       <item itemvalue="Application.BaseDBapp" />
       <item itemvalue="Application.OrderWideApp" />
       <item itemvalue="Application.ProductStatsApp" />
+      <item itemvalue="Application.KeywordUtil" />
+      <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
+      <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
+      <item itemvalue="Spring Boot.GmallLoggerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KeywordUtil" />
         <item itemvalue="Application.ProductStatsApp" />
         <item itemvalue="Application.OrderWideApp" />
         <item itemvalue="Application.BaseDBapp" />
         <item itemvalue="Application.VisitorStatsApp" />
-        <item itemvalue="Application.UserJumpDetailApp" />
       </list>
     </recent_temporary>
   </component>
@@ -255,6 +255,8 @@
       <workItem from="1621552691764" duration="9921000" />
       <workItem from="1621572704624" duration="3254000" />
       <workItem from="1621582379899" duration="11423000" />
+      <workItem from="1621640977884" duration="15141000" />
+      <workItem from="1621691625765" duration="2971000" />
     </task>
     <servers />
   </component>
@@ -262,6 +264,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="27" key="#Notifications" timestamp="1621690255967">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1621690255967" />
     <state x="275" y="27" key="#Project_Structure" timestamp="1621239239304">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -282,26 +288,26 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="306" y="103" key="FileChooserDialogImpl" timestamp="1621602317464">
+    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl" timestamp="1621696774449">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="103" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621602317464" />
-    <state width="1323" height="318" key="GridCell.Tab.0.bottom" timestamp="1621612148634">
+    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621696774449" />
+    <state width="1323" height="74" key="GridCell.Tab.0.bottom" timestamp="1621691473200">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621612148634" />
-    <state width="1323" height="318" key="GridCell.Tab.0.center" timestamp="1621612148634">
+    <state width="1323" height="74" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621691473200" />
+    <state width="1323" height="74" key="GridCell.Tab.0.center" timestamp="1621691473199">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621612148634" />
-    <state width="1323" height="318" key="GridCell.Tab.0.left" timestamp="1621612148634">
+    <state width="1323" height="74" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621691473199" />
+    <state width="1323" height="74" key="GridCell.Tab.0.left" timestamp="1621691473199">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621612148634" />
-    <state width="1323" height="318" key="GridCell.Tab.0.right" timestamp="1621612148634">
+    <state width="1323" height="74" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621691473199" />
+    <state width="1323" height="74" key="GridCell.Tab.0.right" timestamp="1621691473200">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="318" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621612148634" />
+    <state width="1323" height="74" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621691473200" />
     <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1620919022672">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -338,18 +344,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="80" y="22" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621591266232" />
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621553373685">
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621691622012">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621553373685" />
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621691622012" />
     <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1" timestamp="1621471793193">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1/0.0.1366.738@0.0.1366.738" timestamp="1621471793193" />
-    <state x="359" y="102" width="788" height="534" key="find.popup" timestamp="1621334418367">
+    <state x="359" y="102" width="788" height="534" key="find.popup" timestamp="1621654212207">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="359" y="102" width="788" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1621334418367" />
+    <state x="359" y="102" width="788" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1621654212207" />
     <state x="115" y="127" key="new project wizard" timestamp="1620902982106">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

@@ -56,6 +56,7 @@
         </dependency>
 
 
+        <!--使用本地web查看程序运行情况-->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-runtime-web_2.12</artifactId>
@@ -92,7 +93,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>

@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.me.gmall.realtime.app.func.DimAsyncFunction;
-import com.me.gmall.realtime.bean.GmallConstant;
+import com.me.gmall.realtime.common.GmallConstant;
 import com.me.gmall.realtime.bean.OrderWide;
 import com.me.gmall.realtime.bean.PaymentWide;
 import com.me.gmall.realtime.bean.ProductStats;
@@ -248,7 +248,7 @@ public class ProductStatsApp {
                                 }
                         ));
 
-        //TODO 9.使用keyby进行分组   sku_id
+        //TODO 9.使用keyby进行分组   因为所有流都有 sku_id，所以就用 sku_id 分组了
         KeyedStream<ProductStats, Long> keyedDS = productStatsWithWatermarkDS.keyBy(ProductStats::getSku_id);
 
         //TODO 10.开窗   滚动事件时间窗口 10s
