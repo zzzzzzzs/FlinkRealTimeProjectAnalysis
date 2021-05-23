@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/gmall-cdc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProductStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProductStatsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/bean/GmallConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/common/GmallConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/MyKafkaUtil.java" afterDir="false" />
-    </list>
+    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,6 +251,7 @@
       <workItem from="1621582379899" duration="11423000" />
       <workItem from="1621640977884" duration="15141000" />
       <workItem from="1621691625765" duration="2971000" />
+      <workItem from="1621729120713" duration="1792000" />
     </task>
     <servers />
   </component>
@@ -288,10 +283,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl" timestamp="1621696774449">
+    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl" timestamp="1621731135795">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621696774449" />
+    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621731135795" />
     <state width="1323" height="74" key="GridCell.Tab.0.bottom" timestamp="1621691473200">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -344,10 +339,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="80" y="22" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621591266232" />
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621691622012">
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621729120827">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621691622012" />
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621729120827" />
     <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1" timestamp="1621471793193">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
