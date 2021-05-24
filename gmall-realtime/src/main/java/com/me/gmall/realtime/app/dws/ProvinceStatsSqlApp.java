@@ -51,7 +51,7 @@ public class ProvinceStatsSqlApp {
         //TODO 5.将动态表转化为流
         DataStream<ProvinceStats> provinceStatsDS = tableEnv.toAppendStream(provinceStateTable, ProvinceStats.class);
 
-        //TODO 6.写到CK
+        //TODO 6. 打印 写到CK
         provinceStatsDS.print(">>>>");
         provinceStatsDS.addSink(
                 ClickHouseUtil.getJdbcSink("insert into  province_stats_1116  values(?,?,?,?,?,?,?,?,?,?)")

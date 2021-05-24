@@ -12,6 +12,7 @@
         <module name="gmall2020-mock-db" />
         <module name="gmall-realtime" />
         <module name="gmall-logger" />
+        <module name="gmall-publisher" />
         <module name="gmall-cdc" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gmall-logger" options="-parameters" />
+      <module name="gmall-publisher" options="-parameters" />
       <module name="gmall2020-common" options="-parameters" />
       <module name="gmall2020-mock-db" options="-parameters" />
       <module name="gmall2020-mock-log" options="-parameters" />

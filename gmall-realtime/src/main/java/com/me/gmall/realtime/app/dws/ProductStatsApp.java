@@ -8,6 +8,7 @@ import com.me.gmall.realtime.common.GmallConstant;
 import com.me.gmall.realtime.bean.OrderWide;
 import com.me.gmall.realtime.bean.PaymentWide;
 import com.me.gmall.realtime.bean.ProductStats;
+import com.me.gmall.realtime.utils.ClickHouseUtil;
 import com.me.gmall.realtime.utils.DateTimeUtil;
 import com.me.gmall.realtime.utils.MyKafkaUtil;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
@@ -366,6 +367,10 @@ public class ProductStatsApp {
 
         //TODO 13. 打印  写到ClickHouse中
         productStatsWithTmDstream.print(">>>>");
+
+        productStatsWithTmDstream.addSink(
+                ClickHouseUtil.getJdbcSink("insert into product_stats_1116 values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")
+        );
 
         env.execute();
     }

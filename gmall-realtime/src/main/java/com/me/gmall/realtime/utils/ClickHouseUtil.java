@@ -51,6 +51,7 @@ public class ClickHouseUtil {
                         }
                     }
                 },
+                // 每个并行度都需要达到这个批次大小，否则不会写入clickhouse
                 new JdbcExecutionOptions.Builder().withBatchSize(5).build(),
                 new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
                         .withDriverName("ru.yandex.clickhouse.ClickHouseDriver")
