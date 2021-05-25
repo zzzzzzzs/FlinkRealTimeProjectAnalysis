@@ -1,0 +1,4 @@
+com\me\cdc\FlinkCDC03_CustomSchema.class
+com\me\cdc\FlinkCDC02_SQL.class
+com\me\cdc\MySchema.class
+com\me\cdc\FlinkCDC01_DS.class

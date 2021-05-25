@@ -124,7 +124,7 @@ public class OrderWideApp {
         SingleOutputStreamOperator<OrderWide> orderWideDS = orderInfoKeyedDS
                 .intervalJoin(orderDetailKeyedDS)
                 // 设置时间上下界
-                .between(Time.seconds(-10), Time.seconds(10))
+                .between(Time.seconds(-5), Time.seconds(5))
                 .process(new ProcessJoinFunction<OrderInfo, OrderDetail, OrderWide>() {
                     @Override
                     public void processElement(OrderInfo orderInfo, OrderDetail orderDetail, Context ctx, Collector<OrderWide> out) throws Exception {

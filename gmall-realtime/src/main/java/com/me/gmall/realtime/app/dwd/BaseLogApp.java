@@ -50,7 +50,7 @@ public class BaseLogApp {
         //1.1 创建流处理环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //1.2 设置并行度
-//        env.setParallelism(4);
+        env.setParallelism(4);
 //        //TODO 2.设置检查点
 //        //2.1 每隔5秒创建一次检查点
 //        env.enableCheckpointing(5000L, CheckpointingMode.EXACTLY_ONCE);

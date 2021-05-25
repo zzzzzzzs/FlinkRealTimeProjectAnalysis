@@ -1,10 +1,14 @@
 package com.me.gmall.publisher.controller;
 
 
+import com.me.gmall.publisher.bean.KeywordStats;
 import com.me.gmall.publisher.bean.ProductStats;
 import com.me.gmall.publisher.bean.ProvinceStats;
+import com.me.gmall.publisher.bean.VisitorStats;
+import com.me.gmall.publisher.service.KeywordStatsService;
 import com.me.gmall.publisher.service.ProductStatsService;
 import com.me.gmall.publisher.service.ProvinceStatsService;
+import com.me.gmall.publisher.service.VisitorStatsService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +33,120 @@ public class SugarController {
 
     @Autowired
     ProvinceStatsService provinceStatsService;
+
+    @Autowired
+    VisitorStatsService visitorStatsService;
+
+    @Autowired
+    KeywordStatsService keywordStatsService;
+
+
+    // 3D词云
+    @RequestMapping("/keyword")
+    public String getKeywordStats(
+            @RequestParam(value = "date", defaultValue = "0") Integer date,
+            @RequestParam(value = "limit", defaultValue = "20") Integer limit) {
+        if (date == 0) date = now();
+
+        List<KeywordStats> keywordStatsList = keywordStatsService.getKeywordStats(date, limit);
+        StringBuilder jsonB = new StringBuilder("{\"status\": 0,\"data\": [");
+        for (int i = 0; i < keywordStatsList.size(); i++) {
+            KeywordStats keywordStats = keywordStatsList.get(i);
+            jsonB.append("{\"name\": \""+keywordStats.getKeyword()+"\",\"value\": "+keywordStats.getCt()+"}");
+            if(i < keywordStatsList.size() - 1){
+                jsonB.append(",");
+            }
+        }
+        jsonB.append("]}");
+        return jsonB.toString();
+    }
+
+    // 折线图
+    @RequestMapping("/hour")
+    public String getVisitorStatsByHour(@RequestParam(value = "date",defaultValue = "0") Integer date){
+        if(date == 0) date =now();
+
+        List<VisitorStats> visitorStatsList = visitorStatsService.getVisitorStatsByHour(date);
+        //定义一个数组，用于存放0~23点的数据
+        VisitorStats[] visitorStatsArr = new VisitorStats[24];
+        //遍历访客统计集合
+        for (VisitorStats visitorStats : visitorStatsList) {
+            //将遍历的结果赋给数组中的元素
+            visitorStatsArr[visitorStats.getHr()] = visitorStats;
+        }
+        //定义几个List集合，分别用来存放小时、pv、uv、newUv
+        List<String> hrList = new ArrayList<>();
+        List<Long> pvList = new ArrayList<>();
+        List<Long> uvList = new ArrayList<>();
+        List<Long> newMidUvList = new ArrayList<>();
+
+        //遍历数组，得到0~23点的数据
+        for (int hr = 0; hr < visitorStatsArr.length; hr++) {
+            VisitorStats visitorStats = visitorStatsArr[hr];
+            //判断当前小时是否有访问
+            if(visitorStats!=null){
+                pvList.add(visitorStats.getPv_ct());
+                uvList.add(visitorStats.getUv_ct());
+                newMidUvList.add(visitorStats.getNew_uv());
+            }else{
+                pvList.add(0L);
+                uvList.add(0L);
+                newMidUvList.add(0L);
+            }
+            hrList.add(String.format("%02d",hr));
+        }
+
+        //拼接字符串
+        String json = "{\"status\":0,\"data\":{" + "\"categories\":" +
+                "[\""+StringUtils.join(hrList,"\",\"")+ "\"],\"series\":[" +
+                "{\"name\":\"uv\",\"data\":["+ StringUtils.join(uvList,",") +"]}," +
+                "{\"name\":\"pv\",\"data\":["+ StringUtils.join(pvList,",") +"]}," +
+                "{\"name\":\"新用户\",\"data\":["+ StringUtils.join(newMidUvList,",") +"]}]}}";
+        return  json;
+
+    }
+
+    // 表格
+    @RequestMapping("/visitor")
+    public String getVisitorStatsByIsNew(@RequestParam(value = "date",defaultValue = "0") Integer date){
+        if(date == 0) date =now();
+        //通过service获取访客统计相关度量值
+        List<VisitorStats> visitorStatsList = visitorStatsService.getVisitorStatsByIsNew(date);
+
+        VisitorStats oldVisitorStats = new VisitorStats();
+        VisitorStats newVisitorStats = new VisitorStats();
+        for (VisitorStats visitorStats : visitorStatsList) {
+            if(visitorStats.getIs_new().equals("1")){
+                newVisitorStats = visitorStats;
+            }else{
+                oldVisitorStats = visitorStats;
+            }
+        }
+        //把数据拼接入字符串
+        String json = "{\"status\":0,\"data\":{\"combineNum\":1,\"columns\":" +
+                "[{\"name\":\"类别\",\"id\":\"type\"}," +
+                "{\"name\":\"新用户\",\"id\":\"new\"}," +
+                "{\"name\":\"老用户\",\"id\":\"old\"}]," +
+                "\"rows\":" +
+                "[{\"type\":\"用户数(人)\"," +
+                "\"new\": " + newVisitorStats.getUv_ct() + "," +
+                "\"old\":" + oldVisitorStats.getUv_ct() + "}," +
+                "{\"type\":\"总访问页面(次)\"," +
+                "\"new\":" + newVisitorStats.getPv_ct() + "," +
+                "\"old\":" + oldVisitorStats.getPv_ct() + "}," +
+                "{\"type\":\"跳出率(%)\"," +
+                "\"new\":" + newVisitorStats.getUjRate() + "," +
+                "\"old\":" + oldVisitorStats.getUjRate() + "}," +
+                "{\"type\":\"平均在线时长(秒)\"," +
+                "\"new\":" + newVisitorStats.getDurPerSv() + "," +
+                "\"old\":" + oldVisitorStats.getDurPerSv() + "}," +
+                "{\"type\":\"平均访问页面数(人次)\"," +
+                "\"new\":" + newVisitorStats.getPvPerSv() + "," +
+                "\"old\":" + oldVisitorStats.getPvPerSv()
+                + "}]}}";
+        return json;
+
+    }
 
     // 地图
     @RequestMapping("/province")

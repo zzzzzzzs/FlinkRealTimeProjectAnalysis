@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/clickhousesql/studysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/clickhousesql/studysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-cdc/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-cdc/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-cdc/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-cdc/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-publisher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-publisher/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-publisher/src/main/java/com/me/gmall/publisher/controller/SugarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-publisher/src/main/java/com/me/gmall/publisher/controller/SugarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-publisher/src/test/java/com/me/gmall/GmallPublisherApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-realtime/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseDBapp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseLogApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwd/BaseLogApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dwm/OrderWideApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProductStatsApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProductStatsApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProvinceStatsSqlApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/app/dws/ProvinceStatsSqlApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/ClickHouseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-realtime/src/main/java/com/me/gmall/realtime/utils/ClickHouseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/classes/META-INF/gmall-realtime.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +42,8 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Data\JavaWarehouse\RepoMaven" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../JavaWarehouse/apache-maven-3.5.4" />
-        <option name="userSettingsFile" value="D:\Data\JavaWarehouse\apache-maven-3.5.4\conf\settings.xml" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../JavaWarehouse/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\Data\JavaWarehouse\apache-maven-3.8.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -73,17 +76,17 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Data\KnowledgeWarehouse\code\FlinkRealTimeProjectAnalysis" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Data\KnowledgeWarehouse\code\FlinkRealTimeProjectAnalysis\gmall-realtime\src\main\resources" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Data\KnowledgeWarehouse\code\FlinkRealTimeProjectAnalysis" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,25 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderWideApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.OrderWideApp" />
+    <configuration name="ProductStatsApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dws.ProductStatsApp" />
       <module name="gmall-realtime" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaymentWideApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.PaymentWideApp" />
-      <module name="gmall-realtime" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dws.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,6 +129,32 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.me.gmall.realtime.app.dws.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueVisitApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UniqueVisitApp" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserJumpDetailApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.me.gmall.realtime.app.dwm.UserJumpDetailApp" />
+      <module name="gmall-realtime" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.me.gmall.realtime.app.dwm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -170,14 +186,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GmallPublisherApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="GmallPublisherApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gmall-publisher" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.me.gmall.publisher.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.me.gmall.publisher.GmallPublisherApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,23 +204,24 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UniqueVisitApp" />
+      <item itemvalue="Application.UserJumpDetailApp" />
+      <item itemvalue="Application.KeywordStatsSqlApp" />
+      <item itemvalue="Application.ProductStatsApp" />
+      <item itemvalue="Application.ProvinceStatsSqlApp" />
       <item itemvalue="Spring Boot.Gmall2020MockDbApplication" />
       <item itemvalue="Spring Boot.Gmall2020MockLogApplication" />
       <item itemvalue="Spring Boot.GmallLoggerApplication" />
       <item itemvalue="Spring Boot.GmallPublisherApplication" />
-      <item itemvalue="Application.ProvinceStatsSqlApp" />
-      <item itemvalue="Application.OrderWideApp" />
-      <item itemvalue="Application.PaymentWideApp" />
       <item itemvalue="Spring Boot.GmallPublisherApplication (1)" />
-      <item itemvalue="Application.KeywordStatsSqlApp" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KeywordStatsSqlApp" />
-        <item itemvalue="Spring Boot.GmallPublisherApplication (1)" />
-        <item itemvalue="Application.OrderWideApp" />
         <item itemvalue="Application.ProvinceStatsSqlApp" />
-        <item itemvalue="Application.PaymentWideApp" />
+        <item itemvalue="Application.ProductStatsApp" />
+        <item itemvalue="Application.KeywordStatsSqlApp" />
+        <item itemvalue="Application.UserJumpDetailApp" />
+        <item itemvalue="Application.UniqueVisitApp" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +229,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.27125195" />
           <treeState>
             <expand>
               <path>
@@ -272,6 +284,8 @@
       <workItem from="1621691625765" duration="2971000" />
       <workItem from="1621729120713" duration="1792000" />
       <workItem from="1621812807060" duration="27327000" />
+      <workItem from="1621903137497" duration="14271000" />
+      <workItem from="1621942478710" duration="5508000" />
     </task>
     <servers />
   </component>
@@ -303,42 +317,42 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl" timestamp="1621862304877">
+    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl" timestamp="1621945894120">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621862304877" />
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom" timestamp="1621865353862">
+    <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621945894120" />
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom" timestamp="1621955711949">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621865353862" />
-    <state width="1323" height="173" key="GridCell.Tab.0.center" timestamp="1621865353862">
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621955711949" />
+    <state width="1323" height="91" key="GridCell.Tab.0.center" timestamp="1621955711948">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621865353862" />
-    <state width="1323" height="173" key="GridCell.Tab.0.left" timestamp="1621865353861">
+    <state width="1323" height="91" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621955711948" />
+    <state width="1323" height="91" key="GridCell.Tab.0.left" timestamp="1621955711948">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621865353861" />
-    <state width="1323" height="173" key="GridCell.Tab.0.right" timestamp="1621865353862">
+    <state width="1323" height="91" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621955711948" />
+    <state width="1323" height="91" key="GridCell.Tab.0.right" timestamp="1621955711948">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="173" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621865353862" />
-    <state width="905" height="189" key="GridCell.Tab.1.bottom" timestamp="1621865353840">
+    <state width="1323" height="91" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621955711948" />
+    <state width="942" height="241" key="GridCell.Tab.1.bottom" timestamp="1621942220910">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="189" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621865353840" />
-    <state width="905" height="189" key="GridCell.Tab.1.center" timestamp="1621865353840">
+    <state width="942" height="241" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621942220910" />
+    <state width="942" height="241" key="GridCell.Tab.1.center" timestamp="1621942220909">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="189" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1621865353840" />
-    <state width="905" height="189" key="GridCell.Tab.1.left" timestamp="1621865353840">
+    <state width="942" height="241" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1621942220909" />
+    <state width="942" height="241" key="GridCell.Tab.1.left" timestamp="1621942220909">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="189" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1621865353840" />
-    <state width="905" height="189" key="GridCell.Tab.1.right" timestamp="1621865353840">
+    <state width="942" height="241" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1621942220909" />
+    <state width="942" height="241" key="GridCell.Tab.1.right" timestamp="1621942220909">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="905" height="189" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1621865353840" />
+    <state width="942" height="241" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1621942220909" />
     <state width="905" height="322" key="GridCell.Tab.2.bottom" timestamp="1621865353832">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -355,18 +369,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="905" height="322" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1621865353831" />
-    <state x="80" y="22" key="SettingsEditor" timestamp="1621591266232">
+    <state x="114" y="6" key="SettingsEditor" timestamp="1621943211421">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="80" y="22" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621591266232" />
+    <state x="114" y="6" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621943211421" />
     <state x="482" y="146" width="542" height="445" key="chooseDestDirectoryDialog" timestamp="1621828392668">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="482" y="146" width="542" height="445" key="chooseDestDirectoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1621828392668" />
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621813367091">
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621942481869">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621813367091" />
+    <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621942481869" />
     <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1" timestamp="1621471793193">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

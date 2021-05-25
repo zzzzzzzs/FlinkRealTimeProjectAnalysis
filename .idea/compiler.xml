@@ -11,8 +11,8 @@
         <module name="gmall2020-mock-log" />
         <module name="gmall2020-mock-db" />
         <module name="gmall-realtime" />
-        <module name="gmall-logger" />
         <module name="gmall-publisher" />
+        <module name="gmall-logger" />
         <module name="gmall-cdc" />
       </profile>
     </annotationProcessing>
