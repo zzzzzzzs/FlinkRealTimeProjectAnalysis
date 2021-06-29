@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="" />
+    <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/FlinkRealTimeProjectAnalysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/classes/hbase-site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-realtime/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall2020-mock/gmall2020-mock-db/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall2020-mock/gmall2020-mock-log/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall2020-mock/gmall2020-mock-log/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall2020-mock/gmall2020-mock-log/target/classes/path.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,13 +42,6 @@
     <option name="jrebelEnabledAutocompile" value="true" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="D:\Data\JavaWarehouse\RepoMaven" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../JavaWarehouse/apache-maven-3.8.1" />
-        <option name="userSettingsFile" value="D:\Data\JavaWarehouse\apache-maven-3.8.1\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -59,6 +66,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -276,6 +284,7 @@
       <workItem from="1621903137497" duration="14271000" />
       <workItem from="1621942478710" duration="5508000" />
       <workItem from="1622026758625" duration="1403000" />
+      <workItem from="1624958275758" duration="2452000" />
     </task>
     <servers />
   </component>
@@ -311,21 +320,25 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621945894120" />
-    <state width="1323" height="91" key="GridCell.Tab.0.bottom" timestamp="1621955711949">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1237" height="154" key="GridCell.Tab.0.bottom" timestamp="1624960839276">
+      <screen x="0" y="0" width="1280" height="690" />
     </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.bottom/0.0.1280.690@0.0.1280.690" timestamp="1624960839276" />
     <state width="1323" height="91" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1621955711949" />
-    <state width="1323" height="91" key="GridCell.Tab.0.center" timestamp="1621955711948">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1237" height="154" key="GridCell.Tab.0.center" timestamp="1624960839276">
+      <screen x="0" y="0" width="1280" height="690" />
     </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.center/0.0.1280.690@0.0.1280.690" timestamp="1624960839276" />
     <state width="1323" height="91" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1621955711948" />
-    <state width="1323" height="91" key="GridCell.Tab.0.left" timestamp="1621955711948">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1237" height="154" key="GridCell.Tab.0.left" timestamp="1624960839276">
+      <screen x="0" y="0" width="1280" height="690" />
     </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.left/0.0.1280.690@0.0.1280.690" timestamp="1624960839276" />
     <state width="1323" height="91" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1621955711948" />
-    <state width="1323" height="91" key="GridCell.Tab.0.right" timestamp="1621955711948">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1237" height="154" key="GridCell.Tab.0.right" timestamp="1624960839276">
+      <screen x="0" y="0" width="1280" height="690" />
     </state>
+    <state width="1237" height="154" key="GridCell.Tab.0.right/0.0.1280.690@0.0.1280.690" timestamp="1624960839276" />
     <state width="1323" height="91" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1621955711948" />
     <state width="942" height="241" key="GridCell.Tab.1.bottom" timestamp="1621942220910">
       <screen x="0" y="0" width="1366" height="738" />
@@ -359,9 +372,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="905" height="322" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1621865353831" />
-    <state x="114" y="6" key="SettingsEditor" timestamp="1621943211421">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="107" y="0" key="SettingsEditor" timestamp="1624958285835">
+      <screen x="0" y="0" width="1280" height="690" />
     </state>
+    <state x="107" y="0" key="SettingsEditor/0.0.1280.690@0.0.1280.690" timestamp="1624958285835" />
     <state x="114" y="6" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1621943211421" />
     <state x="482" y="146" width="542" height="445" key="chooseDestDirectoryDialog" timestamp="1621828392668">
       <screen x="0" y="0" width="1366" height="738" />
