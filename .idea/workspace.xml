@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d4537f6-ab56-4cce-b698-b8820b75ce78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +61,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flink-comment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MarkdownClean" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
@@ -277,6 +281,9 @@
       <workItem from="1625621352286" duration="599000" />
       <workItem from="1625640495000" duration="2911000" />
       <workItem from="1625644976245" duration="221000" />
+      <workItem from="1626165750514" duration="371000" />
+      <workItem from="1626176006852" duration="1435000" />
+      <workItem from="1626221955721" duration="2547000" />
     </task>
     <servers />
   </component>
@@ -309,10 +316,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="287" y="96" width="475" height="495" key="FileChooserDialogImpl" timestamp="1625642849420">
+    <state x="287" y="96" width="475" height="495" key="FileChooserDialogImpl" timestamp="1626222010346">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="287" y="96" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1625642849420" />
+    <state x="287" y="96" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1626222010346" />
     <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621945894120" />
     <state width="1237" height="154" key="GridCell.Tab.0.bottom" timestamp="1624960839276">
       <screen x="0" y="0" width="1280" height="690" />
@@ -375,18 +382,19 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="482" y="146" width="542" height="445" key="chooseDestDirectoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1621828392668" />
-    <state x="363" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1621942481869">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="340" y="180" key="com.intellij.ide.util.TipDialog" timestamp="1626176126335">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
+    <state x="340" y="180" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1626176126335" />
     <state x="363" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1621942481869" />
     <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1" timestamp="1621471793193">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="92" y="92" width="1182" height="554" maximized="true" key="dock-window-1/0.0.1366.738@0.0.1366.738" timestamp="1621471793193" />
-    <state x="336" y="95" width="739" height="534" key="find.popup" timestamp="1625640546222">
+    <state x="336" y="95" width="810" height="534" key="find.popup" timestamp="1626177308081">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="336" y="95" width="739" height="534" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1625640546222" />
+    <state x="336" y="95" width="810" height="534" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1626177308081" />
     <state x="359" y="102" width="788" height="534" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1621654212207" />
     <state x="115" y="113" key="new project wizard" timestamp="1621821236294">
       <screen x="0" y="0" width="1366" height="738" />
