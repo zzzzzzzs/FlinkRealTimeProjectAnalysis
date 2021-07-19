@@ -57,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Flink_self_study" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.25897437" />
@@ -281,7 +281,7 @@
       <workItem from="1626176006852" duration="1435000" />
       <workItem from="1626221955721" duration="2798000" />
       <workItem from="1626334366002" duration="736000" />
-      <workItem from="1626578024024" duration="28000" />
+      <workItem from="1626578024024" duration="762000" />
     </task>
     <servers />
   </component>
@@ -314,10 +314,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="161" y="294" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.738@0.0.1366.738" timestamp="1620960317261" />
-    <state x="287" y="96" width="475" height="495" key="FileChooserDialogImpl" timestamp="1626222010346">
+    <state x="287" y="96" width="475" height="495" key="FileChooserDialogImpl" timestamp="1626578079497">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="287" y="96" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1626222010346" />
+    <state x="287" y="96" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1626578079497" />
     <state x="306" y="103" width="475" height="495" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1621945894120" />
     <state width="1237" height="154" key="GridCell.Tab.0.bottom" timestamp="1624960839276">
       <screen x="0" y="0" width="1280" height="690" />
