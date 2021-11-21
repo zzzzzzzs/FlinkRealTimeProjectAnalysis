@@ -10,7 +10,7 @@
         <module>gmall2020-mock</module>
         <module>gmall-cdc</module>
         <module>gmall-publisher</module>
-        <module>gmall-cdc</module>
+        <module>gmall-realtime</module>
     </modules>
 
     <groupId>com.me</groupId>
