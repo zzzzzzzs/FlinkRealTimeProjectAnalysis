@@ -8,7 +8,7 @@
         <version>2.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.me.gmall.publisher</groupId>
+    <groupId>com.me.gmall.realtime</groupId>
     <artifactId>gmall-publisher</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gmall-publisher</name>
@@ -60,12 +60,11 @@
             <version>0.1.55</version>
         </dependency>
         <dependency>
-            <groupId>com.me</groupId>
+            <groupId>com.me.gmall.realtime</groupId>
             <artifactId>gmall-realtime</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
 
     <build>

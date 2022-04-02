@@ -19,16 +19,15 @@ public class FlinkCDC02_SQL {
         //创建动态表
         tableEnv.executeSql("CREATE TABLE user_info (" +
                 " id INT NOT NULL," +
-                " name STRING," +
-                " age INT" +
+                " name STRING" +
                 ") WITH (" +
                 " 'connector' = 'mysql-cdc'," +
-                " 'hostname' = 'hadoop102'," +
+                " 'hostname' = 'localhost'," +
                 " 'port' = '3306'," +
                 " 'username' = 'root'," +
-                " 'password' = '000000'," +
-                " 'database-name' = 'gmallFlinkRealTimeDIM'," +
-                " 'table-name' = 't_user'" +
+                " 'password' = '111'," +
+                " 'database-name' = 'mydb'," +
+                " 'table-name' = 'aaa'" +
                 ")");
 
         //从表中查询数据

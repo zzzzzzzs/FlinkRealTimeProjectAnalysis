@@ -13,7 +13,7 @@
         <module>gmall-realtime</module>
     </modules>
 
-    <groupId>com.me</groupId>
+    <groupId>com.me.gmall.realtime</groupId>
     <artifactId>FlinkRealTimeProjectAnalysis</artifactId>
     <version>1.0-SNAPSHOT</version>
 
